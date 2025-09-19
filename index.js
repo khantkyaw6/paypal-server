@@ -29,7 +29,11 @@ async function getAccessToken() {
 	return res.data.access_token;
 }
 
-app.post('/create-order', async (req, res) => {
+app.get('/', (_req, res) => {
+	res.send('Server is running at port 3001');
+});
+
+app.post('/create-order', async (_req, res) => {
 	try {
 		const accessToken = await getAccessToken();
 
