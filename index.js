@@ -8,7 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PAYPAL_BASE = 'https://api-m.sandbox.paypal.com';
+const PAYPAL_BASE = process.env.PAYPAL_BASE;
+
+console.log({
+	CID: process.env.PAYPAL_CLIENT_ID,
+	SECRET: process.env.PAYPAL_SECRET,
+});
 
 async function getAccessToken() {
 	const auth = Buffer.from(
