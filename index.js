@@ -9,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+console.log('change ');
+
 const PAYPAL_BASE = process.env.PAYPAL_BASE;
 
 console.log({
