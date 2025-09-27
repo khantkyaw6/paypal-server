@@ -74,6 +74,7 @@ app.post('/create-order', async (_req, res) => {
 
 		res.json({ id: orderRes.data.id });
 	} catch (err) {
+		console.log('Error', err);
 		console.error(
 			'Error creating order:',
 			err.response?.data || err.message
