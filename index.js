@@ -38,7 +38,13 @@ async function getAccessToken() {
 }
 
 app.get('/', (_req, res) => {
-	res.send('Server is running at port 3001');
+	res.json({
+		message: 'Server is running at port 3001.',
+		data: {
+			CID: process.env.PAYPAL_CLIENT_ID,
+			SECRET: process.env.PAYPAL_SECRET,
+		},
+	});
 });
 
 app.post('/create-order', async (_req, res) => {
